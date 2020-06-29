@@ -53,7 +53,8 @@ class Game extends React.Component {
                 squares: Array(9).fill(null),
             }],
             stepNumber: 0,
-            xIsNext: true
+            xIsNext: true,
+            boldedText: ['']
         }
     }
 
@@ -69,22 +70,29 @@ class Game extends React.Component {
 
         squares[i] = this.state.xIsNext ? 'X' : 'O';
 
+        let boldedText = Array(history.length).fill(['']);
+
         this.setState({
             history: history.concat({
                 squares: squares
             }),
             stepNumber: history.length,
-            xIsNext: !this.state.xIsNext
+            xIsNext: !this.state.xIsNext,
+            boldedText: boldedText
         });
     }
 
-    jumpTo(step) {
+    jumpTo(e, step) {
+        let boldedText = Array(this.state.history.length).fill(['']);
+        boldedText[step] = 'text-bold';
+
         this.setState({
             stepNumber: step,
-            xIsNext: (step % 2) === 0
+            xIsNext: (step % 2) === 0,
+            boldedText: boldedText
         });
 
-        console.log(step);
+
     }
 
     render() {
@@ -99,7 +107,7 @@ class Game extends React.Component {
 
             return (
                 <li key={move}>
-                    <button onClick={() => this.jumpTo(move)}>
+                    <button className={this.state.boldedText[move]} onClick={e => this.jumpTo(e, move)}>
                         {desc}
                     </button>
                 </li>

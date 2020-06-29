@@ -66,13 +66,9 @@ class Game extends React.Component {
         const squares = current.squares.slice();
 
         let movements = this.state.movements.slice();
-
-        if (condition) {
-
-        }
-
-        const move =  `${this.state.xIsNext ? 'X' : 'O'}:${i}`;
-
+        const row = (i / 3).toString().split('.')[0];
+        const col = (i % 3).toString();
+        const move = `${this.state.xIsNext ? 'X' : 'O'}: ${row}, ${col}`;
         movements.push(move);
 
         if (calculateWinner(squares) || squares[i]) {

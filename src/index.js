@@ -50,12 +50,12 @@ class Game extends React.Component {
         super(props);
         this.state = {
             history: [{
-                squares: Array(9).fill(null),
-                movements: { 0: [''] }
+                squares: Array(9).fill(null)
             }],
+            movements: [''],
             stepNumber: 0,
             xIsNext: true,
-            boldedText: ['']
+            boldedText: [''],
         }
     }
 
@@ -64,6 +64,16 @@ class Game extends React.Component {
             this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
+
+        let movements = this.state.movements.slice();
+
+        if (condition) {
+
+        }
+
+        const move =  `${this.state.xIsNext ? 'X' : 'O'}:${i}`;
+
+        movements.push(move);
 
         if (calculateWinner(squares) || squares[i]) {
             return;
@@ -75,8 +85,9 @@ class Game extends React.Component {
 
         this.setState({
             history: history.concat({
-                squares: squares
+                squares: squares,
             }),
+            movements: movements,
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
             boldedText: boldedText

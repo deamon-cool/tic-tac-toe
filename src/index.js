@@ -90,7 +90,7 @@ class Game extends React.Component {
         });
     }
 
-    jumpTo(e, step) {
+    jumpTo(step) {
         let boldedText = Array(this.state.history.length).fill(['']);
         boldedText[step] = 'text-bold';
 
@@ -115,7 +115,7 @@ class Game extends React.Component {
 
             return (
                 <li key={move}>
-                    <button className={this.state.boldedText[move]} onClick={e => this.jumpTo(e, move)}>
+                    <button className={this.state.boldedText[move]} onClick={() => this.jumpTo(move)}>
                         {desc}
                     </button>
                 </li>

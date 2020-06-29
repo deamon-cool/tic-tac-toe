@@ -67,15 +67,26 @@ class Game extends React.Component {
 
         // console.log(history);
 
+
+
+
+        // THIS IS INTERESTING
+
         const current = history[history.length - 1];
 
         console.log(current.squares.slice());
+        // expected: [null, null, null, null, null, null, null, null, null]
 
         const squares = current.squares.slice();
 
         console.log(squares);
+        // expected: [null, null, null, null, null, null, null, null, null],
+        // SUPRISE :D [null, null, null, "X", null, null, null, null, null]
 
-        const movements = current.movements;
+
+
+
+        // const movements = current.movements;
 
 
 

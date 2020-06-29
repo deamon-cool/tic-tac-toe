@@ -51,6 +51,7 @@ class Game extends React.Component {
         this.state = {
             history: [{
                 squares: Array(9).fill(null),
+                movements: { 0: [''] }
             }],
             stepNumber: 0,
             xIsNext: true,

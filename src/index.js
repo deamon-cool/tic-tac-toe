@@ -103,7 +103,9 @@ class Game extends React.Component {
     }
 
     handleSortClick() {
-
+        this.setState({
+            isAscending: !this.state.isAscending
+        });
     }
 
     render() {

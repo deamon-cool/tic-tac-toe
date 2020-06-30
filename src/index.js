@@ -65,7 +65,8 @@ class Game extends React.Component {
         const current = history[history.length - 1];
         const squares = current.squares.slice();
 
-        let movements = this.state.movements.slice();
+        let movements = this.state.movements.slice(0,
+            this.state.stepNumber + 1);
         const row = (i / 3).toString().split('.')[0];
         const col = (i % 3).toString();
         const move = `${this.state.xIsNext ? 'X' : 'O'}: ${row}, ${col}`;

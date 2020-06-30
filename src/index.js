@@ -113,7 +113,7 @@ class Game extends React.Component {
                 'Go to move #' + move :
                 'Go to game start';
 
-            const moves = movements.slice(0, move + 1).map(movement => {
+            const movs = movements.slice(0, move + 1).map(movement => {
                 return <div key={movement}>{movement}</div>;
             });
 
@@ -123,7 +123,7 @@ class Game extends React.Component {
                         {desc}
                     </button>
                     <div className='movements'>
-                        {moves}
+                        {movs}
                     </div>
                 </li>
             );

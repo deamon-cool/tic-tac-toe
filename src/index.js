@@ -101,6 +101,10 @@ class Game extends React.Component {
         });
     }
 
+    handleSortClick() {
+
+    }
+
     render() {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
@@ -147,7 +151,7 @@ class Game extends React.Component {
                 </div>
                 <div className='game-info'>
                     <div>{status}</div>
-                    <button onClick={() => this.handleSort}>Ascending/Descending order</button>
+                    <button onClick={() => this.handleSortClick}>Ascending/Descending order</button>
                     <div>{historyMoves}</div>
                 </div>
             </div>

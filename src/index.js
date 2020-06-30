@@ -55,6 +55,7 @@ class Game extends React.Component {
             stepNumber: 0,
             xIsNext: true,
             boldedText: [''],
+            isAscending: true
         }
     }
 

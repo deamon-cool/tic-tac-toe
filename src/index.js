@@ -15,9 +15,19 @@ function Square(props) {
 
 class Board extends React.Component {
     renderSquare(i) {
+        const winnerSquares = this.props.winnerSquares;
+        let className = '';
+
+        if (winnerSquares) {
+            if (winnerSquares.includes(i)) {
+                className = 'color-square'
+            }
+        }
+
         return (
             <Square
                 key={`square ${i}`}
+                additionClass={className}
                 value={this.props.squares[i]}
                 onClick={() => this.props.onClick(i)} />
         );

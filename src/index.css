@@ -56,3 +56,7 @@ ol, ul {
 .movements {
     margin-left: 20px;
 }
+
+.color-square {
+    border: 3px solid red;
+}

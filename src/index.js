@@ -100,25 +100,29 @@ class Game extends React.Component {
             xIsNext: (step % 2) === 0,
             boldedText: boldedText
         });
-
-
     }
 
     render() {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
         const winner = calculateWinner(current.squares);
+        const movements = this.state.movements;
 
         const moves = history.map((step, move) => {
             const desc = move ?
                 'Go to move #' + move :
                 'Go to game start';
 
+            const moves = movements.slice(0, move + 1).map(movement => {
+                return <div key={movement}>{movement}</div>;
+            });
+
             return (
                 <li key={move}>
                     <button className={this.state.boldedText[move]} onClick={() => this.jumpTo(move)}>
                         {desc}
                     </button>
+                    {moves}
                 </li>
             );
         });

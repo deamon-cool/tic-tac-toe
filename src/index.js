@@ -6,7 +6,7 @@ let root = document.querySelector('#root');
 
 function Square(props) {
     return (
-        <button className='square'
+        <button className={'square ' + props.additionClass}
             onClick={() => { props.onClick() }}>
             {props.value}
         </button>

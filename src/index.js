@@ -107,12 +107,12 @@ class Game extends React.Component {
         const winner = calculateWinner(current.squares);
         const movements = this.state.movements;
 
-        const moves = history.map((step, move) => {
+        const historyMoves = history.map((step, move) => {
             const desc = move ?
                 'Go to move #' + move :
                 'Go to game start';
 
-            const movs = movements.slice(0, move + 1).map(movement => {
+            const moves = movements.slice(0, move + 1).map(movement => {
                 return <div key={movement}>{movement}</div>;
             });
 
@@ -122,7 +122,7 @@ class Game extends React.Component {
                         {desc}
                     </button>
                     <div className='movements'>
-                        {movs}
+                        {moves}
                     </div>
                 </li>
             );
@@ -147,7 +147,7 @@ class Game extends React.Component {
                 </div>
                 <div className='game-info'>
                     <div>{status}</div>
-                    <div>{moves}</div>
+                    <div>{historyMoves}</div>
                 </div>
             </div>
         );

@@ -135,6 +135,13 @@ class Game extends React.Component {
             );
         });
 
+        let orderTypeButtonText = 'Descend Order';
+        if (!this.state.isAscending) {
+            historyMoves.reverse()
+
+            orderTypeButtonText = 'Ascend Order';
+        }
+
         let status;
         if (winner) {
             status = 'Winner: ' + winner;

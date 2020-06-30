@@ -122,7 +122,9 @@ class Game extends React.Component {
                     <button className={this.state.boldedText[move]} onClick={() => this.jumpTo(move)}>
                         {desc}
                     </button>
-                    {moves}
+                    <div className='movements'>
+                        {moves}
+                    </div>
                 </li>
             );
         });

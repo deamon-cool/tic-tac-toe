@@ -52,3 +52,7 @@ ol, ul {
 .text-bold {
     font-weight: bold;
 }
+
+.movements {
+    margin-left: 20px;
+}
